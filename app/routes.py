@@ -1,5 +1,5 @@
-from flask import Flask,render_template,request
-from app import app,db
+from flask import Flask,render_template,request, current_app
+from app import db
 from datetime import datetime
 import pytz
 
@@ -18,11 +18,6 @@ def hello_world():
     # return message
 
 
-def get_pst_time():
-    # date_format = '%m/%d/%Y %H:%M:%S %Z'
-    date = datetime.now(tz=pytz.utc)
-    date = date.astimezone(pytz.timezone('US/Pacific'))
-    return str(date) + " PST"
 
 # pass some values
 @app.route('/surnames/')
@@ -35,14 +30,14 @@ def get_surname(surname="Enter Name=Some Name"):
 # Check Connection Auth in infinete While loop & sleep for 5 minute
 # Configure db config using chef
 # SQLAlchemy
-@app.route('/health')
-def health_rds():
-    return "OK"
+# @app.route('/hello')
+# def health_rds():
+#     return "OK"
 
 # '/diag' must print
 # 1. Number of instance in the region
 # 2. Version from the Nginx(Configure something into setting with using chef)
-# 3. Health of each instance name: try to get instance IP get /health
+# 3. Health of each instance name: try to get instance IP get /hello
 
 
 @app.route('/diag')
