@@ -30,9 +30,9 @@ def get_surname(surname="Enter Name=Some Name"):
 # Check Connection Auth in infinete While loop & sleep for 5 minute
 # Configure db config using chef
 # SQLAlchemy
-# @app.route('/hello')
-# def health_rds():
-#     return "OK"
+@app.route('/hello')
+def health_rds():
+    return "OK"
 
 # '/diag' must print
 # 1. Number of instance in the region

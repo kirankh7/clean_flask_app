@@ -2,6 +2,8 @@ from flask import render_template,request, current_app
 from datetime import datetime
 import pytz
 
+from ..models import DBProfile
+
 from . import hello
 
 
@@ -11,9 +13,13 @@ def hello_world():
     message = "Hello World!  {}".format(get_pst_time())
     image_src = "https://s3.amazonaws.com/kiran-test-2/cruiser80.jpg"
 
+    # Database
+    db_string = DBProfile.query.all
+
     return render_template("index.html",
                            src_hello=message,
-                           image_name=image_src
+                           image_name=image_src,
+                           db_message = db_string
                            )
 def get_pst_time():
     # date_format = '%m/%d/%Y %H:%M:%S %Z'
