@@ -5,7 +5,7 @@ from . import health
 
 @health.route("/health")
 def check_rds_conn():
-    pass
+    return "Ok"
 
 
 

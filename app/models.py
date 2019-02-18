@@ -3,6 +3,7 @@ from flask import current_app
 
 db = SQLAlchemy()
 
+
 #
 # db.config.update(
 #     SECRET_KEY= 'Avankia1',

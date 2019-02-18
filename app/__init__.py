@@ -29,6 +29,8 @@ def create_app(confi_class=Config):
     from app.diag.diag import diag
 
     app.register_blueprint(hello)
+    app.register_blueprint(health)
+    app.register_blueprint(diag)
 
     return app
 
