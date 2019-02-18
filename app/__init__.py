@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from app.config import Config
-from flask_migrate import Migrate
+# from flask_migrate import Migrate
 
 # # Creating an instance of the Flask(kind of module)
 # app = Flask(__name__)
@@ -22,7 +22,7 @@ def create_app(confi_class=Config):
     from app.models import db
     db.init_app(app)
 
-    migrate = Migrate(app, db)
+    # migrate = Migrate(app, db)
 
     from app.hello.hello import hello
     from app.health.health import health
