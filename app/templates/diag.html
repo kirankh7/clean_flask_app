@@ -1,13 +1,15 @@
-<h1 class="hello"> Instance Diagnostics Page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h1 class="hello"> Instance Diagnostics Page</h1>
+</head>
 <p>Total number of instance in {{ region }} : {{ instance_count }}</p>
-
-<p>Nothing so far</p>
-
-<ul>
-    {% for item in instance_ids  %}
-        <li>item.text</li>
-    {% endfor %}
-
-</ul>
-
-
+<body>
+    <ul>
+        {% for item in  instance_ids %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        
+    </ul>
+</body>
+</html>

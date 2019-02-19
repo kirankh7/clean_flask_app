@@ -14,6 +14,7 @@ def diagnose_metrics():
     for instance in conn.get_only_instances():
         count += 1
         server_list.append(instance)
+
     return render_template('diag.html',
                            region = region_name,
                            instance_count=count,
