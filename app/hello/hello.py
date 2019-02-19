@@ -2,7 +2,7 @@ from flask import render_template,request, current_app
 from datetime import datetime
 import pytz
 
-from ..models import DBProfile
+from ..models import DatabaseTables
 
 from . import hello
 
@@ -14,7 +14,7 @@ def hello_world():
     image_src = "https://s3.amazonaws.com/kiran-test-2/cruiser80.jpg"
 
     # Database
-    db_string = DBProfile.query.all
+    db_string = DatabaseTables.query.all
 
     return render_template("index.html",
                            src_hello=message,

@@ -1,7 +1,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from app.config import Config
-# from flask_migrate import Migrate
+from app.models import db
+
 
 # # Creating an instance of the Flask(kind of module)
 # app = Flask(__name__)
@@ -9,20 +10,20 @@ from app.config import Config
 # # Passing configs from Json file
 # app.config.from_object(Config)
 
-
-
 # pass db instance
-db = SQLAlchemy()
+# db = SQLAlchemy()
 
 
 def create_app(confi_class=Config):
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    from app.models import db
-    db.init_app(app)
+    # DB Settings
+    # app.config.from_object(Config)
 
-    # migrate = Migrate(app, db)
+    # from app.models import db
+    # db.init_app(app)
+
 
     from app.hello.hello import hello
     from app.health.health import health

@@ -4,14 +4,8 @@ from flask import current_app
 db = SQLAlchemy()
 
 
-#
-# db.config.update(
-#     SECRET_KEY= 'Avankia1',
-#     SQLALCHEMY_DATABASE_URI='postgresql://rooter:Avankia1@kiran-db.c09ylvqoqhhn.eu-west-1.rds.amazonaws.com/flaskdb',
-#     SQLALCHEMY_TRACK_MODIFICATIONS=True
-# )
 
-class DBProfile(db.Model):
+class DatabaseTables(db.Model):
     __tablename__ = 'flask_app'
 
     id = db.Column(db.Integer, primary_key=True)
