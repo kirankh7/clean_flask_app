@@ -3,8 +3,6 @@ from flask import current_app
 
 db = SQLAlchemy()
 
-
-
 class DatabaseTables(db.Model):
     __tablename__ = 'flask_app'
 
@@ -17,3 +15,9 @@ class DatabaseTables(db.Model):
 
     def __repr__(self):
         return 'The id is {}, Name is is {}'.format(self.id, self.name)
+
+
+
+
+
+

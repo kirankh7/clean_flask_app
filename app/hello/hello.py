@@ -2,9 +2,11 @@ from flask import render_template,request, current_app
 from datetime import datetime
 import pytz
 
-from ..models import DatabaseTables
+
 
 from . import hello
+from ..models import DatabaseTables,db
+
 
 
 # First / root of the flask app
@@ -15,11 +17,15 @@ def hello_world():
 
     # Database
     db_string = DatabaseTables.query.all
+    me = DatabaseTables(2, 'Kiran Haridas')
+    db.session.add(me)
+    db.session.commit()
 
-    return render_template("index.html",
+
+    return render_template("hello.html",
                            src_hello=message,
                            image_name=image_src,
-                           db_message = db_string
+                           db_message=db_string
                            )
 def get_pst_time():
     # date_format = '%m/%d/%Y %H:%M:%S %Z'

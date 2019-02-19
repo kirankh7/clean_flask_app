@@ -5,13 +5,13 @@ import pytz
 
 
 # First / root of the flask app
-@app.route('/index.html') # same hello_world
+@app.route('/hello.html') # same hello_world
 @app.route('/')
 def hello_world():
     message = "Hello World!  {}".format(get_pst_time())
     image_src = "https://s3.amazonaws.com/kiran-test-2/cruiser80.jpg"
 
-    return render_template("index.html",
+    return render_template("hello.html",
                            src_hello=message,
                            image_name=image_src
                            )
