@@ -11,3 +11,4 @@ Flask-Migrate==2.4.0
 boto==2.49.0
 botocore==1.12.86
 mysqlclient==1.4.2
+requests==2.21.0
