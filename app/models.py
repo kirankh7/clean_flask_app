@@ -1,23 +1,14 @@
-from flask_sqlalchemy import SQLAlchemy
-from flask import current_app
+from . import db
 
-db = SQLAlchemy()
 
-class DatabaseTables(db.Model):
-    __tablename__ = 'flask_app'
+class Publication(db.Model):
+    __tablename__ = 'publication'
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
 
-    def __init__(self, id, name):
-        self.id = id
-        self.name = name
+    def to_dict(self):
+        return {'id': self.id, 'name': self.name}
 
     def __repr__(self):
-        return 'The id is {}, Name is is {}'.format(self.id, self.name)
-
-
-
-
-
-
+        return f'<Publication {self.id}: {self.name}>'
