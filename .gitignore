@@ -1,4 +1,9 @@
-flaskvirtenv
-__pycache__
-.idea
-migrations
+__pycache__/
+*.py[cod]
+.env
+*.db
+.venv/
+venv/
+instance/
+migrations/
+config.json
